@@ -1,5 +1,13 @@
 # User Stories — SIWES Digital Logbook & Task Tracker
 
+---
+name: User Story
+about: Template for a SIWES logbook feature user story
+title: ''
+labels: ''
+assignees: ''
+---
+
 ## Project-Wide Assumptions
 - Single-user app — no login or authentication.
 - All task data is stored in Firestore (Firebase's cloud database).
