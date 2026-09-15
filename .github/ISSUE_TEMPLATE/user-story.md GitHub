@@ -1,0 +1,83 @@
+# User Stories — SIWES Digital Logbook & Task Tracker
+
+## Project-Wide Assumptions
+- Single-user app — no login or authentication.
+- All task data is stored in Firestore (Firebase's cloud database).
+- No CI/CD pipeline in this version (planned as future work, once covered in coursework).
+
+---
+
+### 1. Add a Task
+**As a** SIWES student,
+**I need** to be able to add a task,
+**So that** I can keep track of what I have learnt so far.
+
+**Details/Assumptions:** Must have an input box, and an "Add" button that both displays the task and saves it to Firestore.
+
+**Acceptance Criteria:**
+- **Given** the input box is empty on the logbook page,
+- **When** I type a task description and click "Add,"
+- **Then** the new task appears in the list with today's date attached.
+
+---
+
+### 2. View Past Entries
+**As a** SIWES student,
+**I need** to see a list of past entries,
+**So that** I can recap what I have done so far.
+
+**Details/Assumptions:** The list should be sorted by date.
+
+**Acceptance Criteria:**
+- **Given** there is a button that shows past entries,
+- **When** I click the button,
+- **Then** I should see a list of all previously added tasks, sorted by date, each showing its date and description.
+
+---
+
+### 3. Save Tasks Automatically
+**As a** SIWES student,
+**I need** my added tasks to be saved automatically,
+**So that** I don't lose my progress when I close the app.
+
+**Details/Assumptions:** Clicking "Add" (from Story 1) triggers the save to Firestore — no separate save step needed.
+
+**Acceptance Criteria:**
+- **Given** the app is connected to Firestore,
+- **When** I add a task,
+- **Then** it is stored in Firestore and still appears in my list after closing and reopening the app.
+
+---
+
+### 4. Edit an Entry
+**As a** SIWES student,
+**I need** to be able to edit an entry,
+**So that** I can correct any mistakes.
+
+**Details/Assumptions:** Editing happens inline (directly in the list, not a separate form).
+
+**Acceptance Criteria:**
+- **Given** a task already exists in the list with a pencil icon next to it,
+- **When** I click the pencil icon, edit the text inline, and click save,
+- **Then** the entry updates in the list with the new text, without creating a duplicate.
+
+---
+
+### 5. Delete an Entry
+**As a** SIWES student,
+**I need** to be able to delete an entry,
+**So that** I can remove a wrong task.
+
+**Details/Assumptions:** A confirmation step appears before deleting, to prevent accidental loss.
+
+**Acceptance Criteria:**
+- **Given** a task exists in the list with a trash icon next to it,
+- **When** I click the trash icon and confirm the deletion in the prompt,
+- **Then** the task is removed and no longer appears in the list.
+
+---
+
+## Future Work (Not in This Version)
+- Filtering past entries by date range.
+- SIWES coordinator view (search by matric number, review and grade tasks).
+- CI/CD pipeline (automated deployment on push).
